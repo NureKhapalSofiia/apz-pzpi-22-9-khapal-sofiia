@@ -1,0 +1,191 @@
+Міністерство освіти і науки України
+Харківський національний університет радіоелектроніки
+Кафедра програмної інженерії
+
+
+
+
+
+
+
+
+
+Звіт
+з практичної роботи №1
+з дисципліни «Аналіз та рефакторинг коду»
+з теми: «Шаблон Strategy проєктування ПЗ»
+
+
+
+
+
+
+
+
+
+Виконала:                                                                             Перевірив:
+студентка групи ПЗПІ-22-9                                                ст. вк. Сокорчук І.П.
+Хапаль С.Є.
+
+Харків 2024
+1 ІСТОРІЯ ЗМІН
+
+Таблиця 1 – Історія змін 
+№	Дата	Версія звіту	Опис змін та виправлень
+1	23.03.2025	1.0	Заповнено розділи 2, 3 та 4. Створено додатки А, Б та В
+
+2 ЗАВДАННЯ
+
+У межах практичного заняття 1 (ПЗ1) передбачено виконання таких завдань:
+1)	Підготувати доповідь на тему: «Шаблон Strategy проєктування програмного забезпечення» (згідно з книгою Ґамма, “Об’єктно-орієнтоване програмування. 
+2)	Створити та оформити слайди презентації для доповіді. (див. додаток Б)
+3)	Створити відеозапис доповіді та опублікувати його на платформі YouTube. (див. додаток А)
+4)	Оформити звіт відповідно до вимог ДСТУ 3008:2015 та завантажити його на ресурс dl.nure.ua.
+5)	У разі потреби — створити обліковий запис на GitHub, використовуючи адресу електронної пошти домену @nure.ua.
+6)	Створити GitHub-репозиторій для виконання завдань з дисципліни, використавши відповідну назву (згідно з вимогами dl.nure.ua), з головною гілкою main.
+7)	У корені репозиторію створити файл README.md, який містить назву репозиторію, академічну групу, прізвище імʼя студента, теми доповідей для ПЗ1 та ПЗ2 та тему проекту на усі ЛР.
+8)	Створити в репозиторії директорію Pract1, у яку завантажити експортований звіт у форматі .txt та додати піддиректорію з усім програмним кодом, що використовувався під час виконання ПЗ1.
+
+3 ОПИС ВИКОНАНОЇ РОБОТИ
+
+У межах ПЗ1 було підготовлено доповідь на тему «Шаблон Strategy» за книгою Ґамма, створено презентацію та записано відео, яке опубліковано на YouTube. Звіт оформлено відповідно до ДСТУ 3008:2015 і завантажено на dl.nure.ua.
+Також створено GitHub-репозиторій з гілкою main, у якому додано файл README.md з основною інформацією, директорію Pract1 із текстовим звітом і кодом, використаним у доповіді.
+
+4  ВИСНОВКИ
+
+У ході виконання практичного завдання я ознайомилася з шаблоном проєктування Strategy, повторила основи об’єктно-орієнтованого програмування та поглибила свої знання про шаблони проєктування згідно з книгою Ґамма. 
+
+ДОДАТОК А
+Посилання на відеозапис доповіді та текст хронологічного опису доповіді
+
+Відеозапис доповіді на YouTube: https://youtu.be/5wiSkKAVe98
+Хронологічний опис відео:
+00:00 Представлення та тема презентації
+00:11 Що таке шаблони проектування та їх класифікація
+01:35 Основна ідея шаблону Strategy
+02:29 Структура шаблону Strategy та принцип його роботи
+04:37 Приклад коду інтерфейсу DeliveryStrategy та класів CourierDelivery, PickupPointDelivery, DroneDelivery
+05:41 Приклад коду класу DeliveryCostCalculator
+06:16 Приклад коду класу Main
+06:43 Приклад коду класу NightExpressDelivery
+07:05 Переваги Strategy
+07:55 Недоліки Strategy
+08:26 Висновки
+09:05 Дякую за увагу
+
+
+ДОДАТОК Б
+Слайди презентації доповіді
+
+ 
+Рисунок 1 – Слайд «Тема презентації»
+
+ 
+Рисунок 2 – Слайд «Що таке шаблони проектування та їх класифікація»
+ 
+Рисунок 3 – Слайд «Основна ідея шаблону Strategy»
+
+ 
+Рисунок 4 – Слайд «Структура шаблону Strategy та принцип його роботи»
+ 
+Рисунок 5 – Слайд «Структура шаблону Strategy та принцип його роботи»
+
+ 
+Рисунок 6 – Слайд «Приклад коду інтерфейсу DeliveryStrategy та класів CourierDelivery, PickupPointDelivery, DroneDelivery»
+
+ 
+Рисунок 7 – Слайд «Приклад коду класу DeliveryCostCalculator»
+
+ 
+Рисунок 8 – Слайд «Приклад коду класу Main»
+
+ 
+Рисунок 9 – Слайд «Приклад коду класу NightExpressDelivery»
+
+ 
+Рисунок 10 – Слайд «Переваги Strategy»
+ Рисунок 11 – Слайд «Недоліки Strategy»
+
+ 
+Рисунок 12 – Слайд «Висновок»
+ 
+Рисунок 13 – Слайд «Дякую за увагу»
+
+
+
+
+ДОДАТОК В
+Приклади програмного коду
+
+Інтерфейс «DeliveryStrategy»
+1  public interface DeliveryStrategy {
+2      double calculateCost(double distance);
+3  }
+Клас «CourierDelivery»
+1  public class CourierDelivery implements DeliveryStrategy{
+2      @Override
+3      public double calculateCost(double distance) {
+4          return 5.0 + distance * 1.2;
+5      }
+6  }
+Клас «PickupPointDelivery»
+1  public class PickupPointDelivery implements DeliveryStrategy{
+2      @Override
+3      public double calculateCost(double distance) {
+4          return 2.0;
+5      }
+6  }
+Клас «DroneDelivery»
+1  public class DroneDelivery implements DeliveryStrategy {
+2      @Override
+3      public double calculateCost(double distance) {
+4          return 10.0 + distance * 2.5;
+5      }
+6  }
+Клас «DeliveryCostCalculator»
+1  public class DeliveryCostCalculator {
+2      private DeliveryStrategy strategy;
+3  
+4      public void setStrategy(DeliveryStrategy strategy) {
+5          this.strategy = strategy;
+6      }
+7  
+8      public double calculate(double distance) {
+9          if (strategy == null) {
+10              throw new IllegalStateException("Delivery strategy not set.");
+11         }
+12          return strategy.calculateCost(distance);
+13     }
+14  }
+Клас «NightExpressDelivery »
+1  public class NightExpressDelivery implements DeliveryStrategy {
+2      @Override
+3      public double calculateCost(double distance) {
+4          return 20.0 + distance * 3.0;
+5      }
+6  }
+Клас «Main»
+1  public class Main {
+2      public static void main(String[] args) {
+3          DeliveryCostCalculator calculator = new DeliveryCostCalculator();
+4  
+5          double distance = 10.0; // приклад відстані в км
+6  
+7          // Користувач вибирає кур'єрську доставку
+8          calculator.setStrategy(new CourierDelivery());
+9          System.out.println("Courier delivery cost: $" + calculator.calculate(distance));
+10  
+11          // Користувач вибирає самовивіз
+12          calculator.setStrategy(new PickupPointDelivery());
+13         System.out.println("Pickup point delivery cost: $" + calculator.calculate(distance));
+14  
+15          // Користувач вибирає дрон-доставку
+16          calculator.setStrategy(new DroneDelivery());
+17          System.out.println("Drone delivery cost: $" + calculator.calculate(distance));
+18      }
+19  }
+
+
+
+
+
