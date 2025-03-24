@@ -12,8 +12,8 @@
 
 Звіт
 з практичної роботи №1
-з дисципліни «Аналіз та рефакторинг коду»
-з теми: «Шаблон Strategy проєктування ПЗ»
+з дисципліни «Архітектура програмного забезпечення»
+з теми: «Шаблон проєктування Strategy»
 
 
 
@@ -27,7 +27,7 @@
 студентка групи ПЗПІ-22-9                                                ст. вк. Сокорчук І.П.
 Хапаль С.Є.
 
-Харків 2024
+Харків 2025
 1 ІСТОРІЯ ЗМІН
 
 Таблиця 1 – Історія змін 
@@ -82,11 +82,13 @@
 
  
 Рисунок 2 – Слайд «Що таке шаблони проектування та їх класифікація»
+
  
 Рисунок 3 – Слайд «Основна ідея шаблону Strategy»
 
  
 Рисунок 4 – Слайд «Структура шаблону Strategy та принцип його роботи»
+
  
 Рисунок 5 – Слайд «Структура шаблону Strategy та принцип його роботи»
 
@@ -104,6 +106,7 @@
 
  
 Рисунок 10 – Слайд «Переваги Strategy»
+
  Рисунок 11 – Слайд «Недоліки Strategy»
 
  
@@ -157,7 +160,7 @@
 12          return strategy.calculateCost(distance);
 13     }
 14  }
-Клас «NightExpressDelivery »
+Клас «NightExpressDelivery»
 1  public class NightExpressDelivery implements DeliveryStrategy {
 2      @Override
 3      public double calculateCost(double distance) {
@@ -184,8 +187,6 @@
 17          System.out.println("Drone delivery cost: $" + calculator.calculate(distance));
 18      }
 19  }
-
-
 
 
 
